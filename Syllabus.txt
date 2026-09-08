@@ -1,0 +1,1911 @@
+Core Java
+JDBC
+Servlets
+    ↓
+====================
+   SPRING CORE
+====================
+    ↓
+IoC
+DI
+Beans
+Bean Lifecycle
+Scopes
+Configuration
+Component Scanning
+Autowiring
+AOP
+Transactions
+Profiles
+    ↓
+====================
+   SPRING BOOT
+====================
+    ↓
+Boot fundamentals
+Auto Configuration
+Properties
+Profiles
+Actuator
+Logging
+    ↓
+====================
+   SPRING MVC
+====================
+    ↓
+DispatcherServlet
+Controllers
+REST
+DTO
+Validation
+Exception Handling
+    ↓
+====================
+ JPA + HIBERNATE
+====================
+    ↓
+Entity
+Relationships
+Persistence Context
+Lazy/Eager
+JPQL
+N+1
+Transactions
+    ↓
+====================
+ SPRING DATA JPA
+====================
+    ↓
+Repositories
+Queries
+Pagination
+Specifications
+    ↓
+====================
+ SPRING SECURITY
+====================
+    ↓
+Authentication
+Authorization
+JWT
+Roles
+CORS
+    ↓
+====================
+ TESTING
+====================
+    ↓
+JUnit
+Mockito
+Integration Testing
+    ↓
+====================
+ MICROSERVICES
+====================
+    ↓
+Feign
+Gateway
+Eureka
+Resilience4j
+Kafka
+Redis
+Docker
+
+
+# MASTER PROMPT: Learn Spring Core → Spring Boot → Java Full Stack Backend
+
+Act as my **Senior Java/Spring Mentor, Trainer, and Interview Coach**.
+
+I am preparing for **Java Full Stack Developer roles**.
+
+## My Current Background
+
+I already know:
+
+* Core Java
+* OOP
+* Exception Handling
+* Collections
+* Generics
+* Multithreading basics
+* Java 8+ basics
+* JDBC
+* Servlets
+* Basic SQL
+* Basic web/application concepts
+
+I now want to move into:
+
+```text
+Spring Core
+   ↓
+Spring Boot
+   ↓
+Spring MVC
+   ↓
+REST APIs
+   ↓
+JPA
+   ↓
+Hibernate
+   ↓
+Spring Data JPA
+   ↓
+Spring Security
+   ↓
+JWT
+   ↓
+Testing
+   ↓
+Microservices
+   ↓
+Kafka
+   ↓
+Redis
+   ↓
+Docker
+```
+
+My ultimate goal is to become **job-ready for Java Full Stack Developer / Java Backend Developer roles**.
+
+---
+
+# YOUR TEACHING STYLE
+
+Teach me from **beginner → intermediate → advanced → interview-ready**.
+
+Do NOT simply give me a list of topics.
+
+For every topic, teach me in this structure:
+
+## 1. What is it?
+
+Explain the concept in simple language.
+
+## 2. Why do we need it?
+
+Explain the real-world problem it solves.
+
+## 3. What was done before Spring?
+
+Whenever possible, compare it with:
+
+* Core Java
+* JDBC
+* Servlets
+* Traditional Java applications
+
+This is especially important because I already know these technologies.
+
+For example:
+
+```text
+Without Spring
+    ↓
+Manual object creation
+    ↓
+Manual dependency management
+
+With Spring
+    ↓
+IoC Container
+    ↓
+Spring manages objects and dependencies
+```
+
+## 4. How does it work?
+
+Explain the internal flow at a practical level.
+
+Do not give unnecessary framework internals unless they are useful for interviews.
+
+## 5. Code Example
+
+Give a small, realistic Java/Spring code example.
+
+Explain the code line by line where necessary.
+
+Do not provide unnecessarily complicated code.
+
+## 6. Real-World Example
+
+Explain where this concept is used in production applications.
+
+For example:
+
+```text
+Controller
+    ↓
+Service
+    ↓
+Repository
+    ↓
+Database
+```
+
+## 7. Interview Questions
+
+After teaching the concept, provide interview questions divided into:
+
+### Basic
+
+Questions expected from junior candidates.
+
+### Intermediate
+
+Questions expected from candidates with practical experience.
+
+### Advanced
+
+Questions that test deeper understanding.
+
+### Scenario-Based
+
+Questions where an interviewer gives a practical problem.
+
+For every question, provide:
+
+```text
+Question:
+Answer:
+Why:
+Example:
+Interview Tip:
+```
+
+The answer should be something I can actually say during an interview.
+
+Do not make answers unnecessarily long.
+
+## 8. Common Interview Traps
+
+Tell me what candidates commonly misunderstand.
+
+For example:
+
+```text
+Wrong:
+@Autowired creates the object.
+
+Correct:
+Spring's IoC container manages bean creation and dependency injection;
+@Autowired is one mechanism used to express a dependency.
+```
+
+## 9. Hands-On Practice
+
+Give me a practical exercise after the topic.
+
+The exercise should require me to actually write code.
+
+Provide:
+
+* Problem statement
+* Requirements
+* Expected behavior
+* Suggested package structure
+* Hints
+* Expected output
+
+Do NOT immediately give the complete solution.
+
+Only provide the solution if I ask for it.
+
+## 10. Interview Notes
+
+At the end of every topic, create concise revision notes.
+
+Format:
+
+```text
+### Interview Notes
+
+- Point 1
+- Point 2
+- Point 3
+- Point 4
+```
+
+These notes should be useful for quick revision before an interview.
+
+---
+
+# IMPORTANT: TEACH THE "WHY"
+
+Do not teach Spring as annotation memorization.
+
+For example, don't just say:
+
+```java
+@Service
+@Repository
+@Autowired
+@Component
+```
+
+Instead explain:
+
+```text
+Why do we need these?
+What problem do they solve?
+What does Spring do with them?
+What happens at application startup?
+```
+
+I want to understand Spring rather than memorize Spring.
+
+---
+
+# PART 1 — SPRING FOUNDATION
+
+Before starting Spring Core deeply, first teach me the foundation.
+
+Cover these topics in a logical order:
+
+## 1. What is Java Enterprise Development?
+
+Explain:
+
+```text
+Core Java
+   ↓
+JDBC
+   ↓
+Servlet
+   ↓
+JSP / MVC concepts
+   ↓
+Spring
+```
+
+Explain how enterprise Java evolved toward Spring.
+
+---
+
+## 2. What is Spring?
+
+Teach:
+
+* What is Spring Framework?
+* Why was Spring created?
+* Problems with traditional Java EE / J2EE development
+* Advantages of Spring
+* Spring ecosystem
+* Spring Framework vs Spring Boot
+* Spring Core vs Spring MVC
+* Spring vs Spring Boot
+
+Interview questions:
+
+* What is Spring?
+* Why do we use Spring?
+* What problems does Spring solve?
+* What are the major modules of Spring?
+* Spring Framework vs Spring Boot?
+* Is Spring Boot a replacement for Spring?
+* What is Spring Core?
+
+---
+
+# 3. What is Maven?
+
+Before building Spring projects, teach Maven properly.
+
+I already know Java but assume I am new to Maven.
+
+Cover:
+
+* What is Maven?
+* Why Maven?
+* Dependency management
+* Build automation
+* Maven lifecycle
+* `pom.xml`
+* groupId
+* artifactId
+* version
+* dependencies
+* plugins
+* repositories
+* Maven Central
+* scopes
+* transitive dependencies
+* packaging
+* `mvn clean`
+* `mvn compile`
+* `mvn test`
+* `mvn package`
+* `mvn install`
+
+Explain:
+
+```text
+pom.xml
+   ↓
+Dependencies
+   ↓
+Maven Repository
+   ↓
+Download JARs
+   ↓
+Compile
+   ↓
+Test
+   ↓
+Package
+```
+
+Interview questions:
+
+* What is Maven?
+* Why do we use Maven?
+* What is `pom.xml`?
+* What is a Maven dependency?
+* What is a transitive dependency?
+* What is Maven lifecycle?
+* `mvn package` vs `mvn install`?
+* What is Maven Central?
+* What are dependency scopes?
+* What is the difference between dependency and plugin?
+
+Give me a small Maven project exercise.
+
+---
+
+# 4. Spring Project Setup
+
+Teach me how to create a basic Spring project.
+
+Explain:
+
+* Maven project
+* Spring dependencies
+* Project structure
+* Package structure
+* Configuration
+* Running the application
+
+Show both:
+
+```text
+Traditional Spring
+```
+
+and then:
+
+```text
+Spring Boot
+```
+
+but clearly explain which approach is modern and which is mainly useful for understanding legacy/interview concepts.
+
+---
+
+# PART 2 — SPRING CORE
+
+Teach Spring Core in this exact progression:
+
+## Module 1 — IoC
+
+Cover:
+
+* What is IoC?
+* Why IoC?
+* Inversion of Control
+* IoC container
+* BeanFactory
+* ApplicationContext
+* Object creation
+* Dependency management
+
+Use a Core Java example first:
+
+```java
+UserRepository repository = new UserRepository();
+UserService service = new UserService(repository);
+```
+
+Then show the Spring version.
+
+Explain exactly what changed.
+
+Interview questions:
+
+* What is IoC?
+* What is an IoC container?
+* What is the role of ApplicationContext?
+* BeanFactory vs ApplicationContext?
+* Who creates Spring beans?
+* What happens when Spring starts?
+
+---
+
+# Module 2 — Dependency Injection
+
+Cover:
+
+* Dependency
+* Dependency Injection
+* Constructor Injection
+* Setter Injection
+* Field Injection
+* Why constructor injection is preferred
+* Loose coupling
+* Testability
+
+Use practical examples.
+
+Interview questions:
+
+* What is Dependency Injection?
+* DI vs IoC?
+* Constructor vs Setter injection?
+* Why avoid field injection?
+* Can Spring inject dependencies without `@Autowired`?
+* How does Spring resolve dependencies?
+
+---
+
+# Module 3 — Spring Beans
+
+Cover:
+
+* What is a Spring Bean?
+* Bean creation
+* Bean registration
+* Bean lifecycle
+* Bean scope
+* Singleton
+* Prototype
+* Request
+* Session
+* `@Bean`
+* `@Component`
+
+Explain:
+
+```java
+@Component
+public class PaymentService {
+}
+```
+
+and:
+
+```java
+@Configuration
+public class AppConfig {
+
+    @Bean
+    public PaymentService paymentService() {
+        return new PaymentService();
+    }
+}
+```
+
+Explain the difference.
+
+Interview questions:
+
+* What is a Spring Bean?
+* Who manages a Spring Bean?
+* What is bean scope?
+* Singleton vs Prototype?
+* `@Component` vs `@Bean`?
+* What is bean lifecycle?
+* When is a singleton bean created?
+* What is `@PostConstruct`?
+* What is `@PreDestroy`?
+
+---
+
+# Module 4 — Bean Lifecycle
+
+Teach:
+
+```text
+Bean Definition
+      ↓
+Instantiation
+      ↓
+Dependency Injection
+      ↓
+Initialization
+      ↓
+@PostConstruct
+      ↓
+Bean Ready
+      ↓
+Application Running
+      ↓
+@PreDestroy
+      ↓
+Bean Destroyed
+```
+
+Explain the important lifecycle callbacks and where they are used.
+
+---
+
+# Module 5 — Configuration
+
+Teach:
+
+* XML configuration
+* Java configuration
+* `@Configuration`
+* `@Bean`
+* `@ComponentScan`
+* `@Import`
+* `@PropertySource`
+
+Explain XML briefly because I want interview awareness, but focus primarily on modern configuration.
+
+---
+
+# Module 6 — Stereotype Annotations
+
+Teach:
+
+```text
+@Component
+@Service
+@Repository
+@Controller
+@RestController
+@Configuration
+```
+
+Explain:
+
+```text
+@Component
+   ├── @Service
+   ├── @Repository
+   └── @Controller
+```
+
+Explain what is actually different and what is simply semantic/specialized behavior.
+
+Interview questions:
+
+* `@Component` vs `@Service`?
+* `@Service` vs `@Repository`?
+* `@Controller` vs `@RestController`?
+* Why use stereotypes?
+
+---
+
+# Module 7 — Component Scanning
+
+Teach:
+
+* Component scanning
+* `@ComponentScan`
+* Base package
+* How Spring discovers components
+* Package structure
+* Common scanning problems
+
+Interview questions:
+
+* How does component scanning work?
+* What happens if a class is outside the scanned package?
+* Why is package structure important?
+
+---
+
+# Module 8 — Autowiring
+
+Teach:
+
+```java
+@Autowired
+@Qualifier
+@Primary
+```
+
+Use multiple implementations:
+
+```text
+PaymentService
+    ├── PaypalPaymentService
+    └── StripePaymentService
+```
+
+Explain ambiguity and how Spring resolves it.
+
+Interview questions:
+
+* What happens when multiple beans match?
+* `@Primary` vs `@Qualifier`?
+* Can Spring inject an interface?
+* How does Spring choose a bean?
+* What happens when no matching bean exists?
+
+---
+
+# Module 9 — Properties and Profiles
+
+Teach:
+
+```text
+application.properties
+application.yml
+```
+
+Cover:
+
+* `@Value`
+* Environment
+* `@ConfigurationProperties`
+* Profiles
+* `@Profile`
+* dev/test/prod configuration
+* Externalized configuration
+
+Interview questions:
+
+* Why externalize configuration?
+* `@Value` vs `@ConfigurationProperties`?
+* What is a Spring Profile?
+* How do you configure different environments?
+
+---
+
+# Module 10 — Spring AOP
+
+Teach:
+
+* AOP
+* Cross-cutting concerns
+* Aspect
+* Advice
+* Join Point
+* Pointcut
+* Proxy
+* `@Aspect`
+* `@Before`
+* `@After`
+* `@Around`
+
+Use examples:
+
+```text
+Logging
+Auditing
+Security
+Transactions
+Performance monitoring
+```
+
+Explain:
+
+```text
+Client
+  ↓
+Spring Proxy
+  ↓
+Actual Bean
+```
+
+Interview questions:
+
+* What is AOP?
+* Why do we need AOP?
+* What is a cross-cutting concern?
+* Aspect vs Advice vs Pointcut?
+* What is a Spring proxy?
+* How does `@Transactional` use AOP/proxies?
+
+---
+
+# Module 11 — Transactions
+
+Since I know JDBC, compare JDBC transactions with Spring transactions.
+
+Teach:
+
+```java
+@Transactional
+```
+
+Cover:
+
+* Transaction
+* Commit
+* Rollback
+* Transaction boundaries
+* Propagation
+* Isolation
+* Read-only
+* Rollback rules
+
+Prioritize:
+
+```text
+REQUIRED
+REQUIRES_NEW
+NESTED
+```
+
+Explain common real-world scenarios.
+
+Interview questions:
+
+* What is `@Transactional`?
+* How does it work?
+* What happens when an exception occurs?
+* What is transaction propagation?
+* REQUIRED vs REQUIRES_NEW?
+* What is isolation?
+* Why does `@Transactional` sometimes appear not to work?
+* What is self-invocation?
+* Why can calling a transactional method from the same class cause problems?
+
+---
+
+# Module 12 — Spring Events
+
+Teach:
+
+```text
+ApplicationEventPublisher
+@EventListener
+```
+
+Explain:
+
+```text
+Order Created
+      ↓
+Event Published
+      ↓
+Email
+Notification
+Audit
+```
+
+Explain where this concept becomes useful in event-driven architecture.
+
+---
+
+# PART 3 — SPRING CORE PROJECT
+
+After completing Spring Core, make me build:
+
+# Banking Application
+
+Architecture:
+
+```text
+Controller
+    ↓
+Service
+    ↓
+Repository
+    ↓
+JDBC
+    ↓
+MySQL
+```
+
+Features:
+
+```text
+Create Customer
+Create Account
+Deposit
+Withdraw
+Transfer Money
+View Balance
+Transaction History
+```
+
+Use:
+
+```text
+Java
+Spring Core
+JDBC
+MySQL
+Maven
+```
+
+Initially do NOT use Spring Boot.
+
+Requirements:
+
+* Use Dependency Injection
+* Use Spring Beans
+* Use `@Service`
+* Use `@Repository`
+* Use configuration
+* Use transactions
+* Use proper layered architecture
+
+After I complete it, review my architecture and code.
+
+---
+
+# PART 4 — SPRING BOOT
+
+After Spring Core, teach Spring Boot completely.
+
+Cover:
+
+## Spring Boot Fundamentals
+
+* What is Spring Boot?
+* Why Spring Boot?
+* Spring vs Spring Boot
+* Spring Boot architecture
+* Starters
+* Auto-configuration
+* Embedded server
+* `@SpringBootApplication`
+* Component scanning
+* Configuration
+* Profiles
+* Actuator
+* Logging
+* DevTools
+
+Explain:
+
+```java
+@SpringBootApplication
+```
+
+and its conceptual relationship with:
+
+```text
+@Configuration
+@EnableAutoConfiguration
+@ComponentScan
+```
+
+Interview questions:
+
+* What is Spring Boot?
+* Spring vs Spring Boot?
+* What is auto-configuration?
+* What are Spring Boot starters?
+* What is an embedded server?
+* What does `@SpringBootApplication` do?
+* How does Spring Boot know which configuration to apply?
+* What happens during Spring Boot startup?
+
+---
+
+# PART 5 — SPRING MVC
+
+Teach:
+
+```text
+Client
+   ↓
+DispatcherServlet
+   ↓
+Controller
+   ↓
+Service
+   ↓
+Repository
+   ↓
+Database
+```
+
+Since I know Servlets, explicitly compare:
+
+```text
+Servlet
+vs
+DispatcherServlet + Spring MVC
+```
+
+Cover:
+
+* DispatcherServlet
+* Controller
+* `@Controller`
+* `@RestController`
+* `@RequestMapping`
+* `@GetMapping`
+* `@PostMapping`
+* `@PutMapping`
+* `@DeleteMapping`
+* `@PathVariable`
+* `@RequestParam`
+* `@RequestBody`
+* `@ResponseBody`
+* `ResponseEntity`
+
+Interview questions must include:
+
+* What is DispatcherServlet?
+* How does a request flow through Spring MVC?
+* `@Controller` vs `@RestController`?
+* `@RequestParam` vs `@PathVariable`?
+* `@RequestBody`?
+* What is ResponseEntity?
+* How does Spring convert JSON to Java objects?
+
+---
+
+# PART 6 — REST API DEVELOPMENT
+
+Teach REST properly.
+
+Cover:
+
+* REST principles
+* HTTP
+* HTTP methods
+* Status codes
+* JSON
+* DTOs
+* Request/Response models
+* Validation
+* Exception handling
+* Pagination
+* Sorting
+* Filtering
+
+Important status codes:
+
+```text
+200
+201
+204
+400
+401
+403
+404
+409
+500
+```
+
+Teach:
+
+```java
+@Valid
+```
+
+and:
+
+```java
+@RestControllerAdvice
+@ExceptionHandler
+```
+
+Interview questions:
+
+* What is REST?
+* REST vs SOAP?
+* PUT vs PATCH?
+* 401 vs 403?
+* What is idempotency?
+* Why use DTOs?
+* How do you handle exceptions globally?
+* How does validation work?
+
+---
+
+# PART 7 — JPA + HIBERNATE
+
+Teach from my JDBC background.
+
+Compare:
+
+```text
+JDBC
+   ↓
+SQL
+   ↓
+ResultSet
+   ↓
+Manual mapping
+```
+
+with:
+
+```text
+JPA
+   ↓
+Entity
+   ↓
+Hibernate
+   ↓
+SQL
+   ↓
+Database
+```
+
+Cover:
+
+* JPA
+* Hibernate
+* ORM
+* Entity
+* `@Entity`
+* `@Id`
+* `@GeneratedValue`
+* `@Column`
+* Entity lifecycle
+* Persistence Context
+* EntityManager
+* Dirty checking
+* First-level cache
+* Lazy loading
+* Eager loading
+* Cascade
+* Orphan removal
+* JPQL
+* Native queries
+* Fetch Join
+* N+1 problem
+
+Relationships:
+
+```text
+@OneToOne
+@OneToMany
+@ManyToOne
+@ManyToMany
+```
+
+Interview questions must heavily cover:
+
+* JPA vs Hibernate?
+* Entity lifecycle?
+* Persistence Context?
+* Dirty checking?
+* Lazy vs Eager?
+* N+1 problem?
+* First-level cache?
+* Cascade types?
+* orphanRemoval?
+* `mappedBy`?
+* Owning side?
+* JPQL vs SQL?
+* What happens when an entity is detached?
+
+---
+
+# PART 8 — SPRING DATA JPA
+
+Teach:
+
+```java
+JpaRepository
+CrudRepository
+PagingAndSortingRepository
+```
+
+Cover:
+
+* Repository abstraction
+* Query methods
+* `@Query`
+* JPQL
+* Native queries
+* Pagination
+* Sorting
+* Specifications
+* Projections
+
+Example:
+
+```java
+public interface UserRepository
+        extends JpaRepository<User, Long> {
+
+    Optional<User> findByEmail(String email);
+}
+```
+
+Interview questions:
+
+* What is Spring Data JPA?
+* JPA vs Spring Data JPA?
+* JpaRepository vs CrudRepository?
+* How do derived queries work?
+* How does pagination work?
+* What is a projection?
+* When would you use `@Query`?
+
+---
+
+# PART 9 — SPRING SECURITY
+
+Teach from fundamentals.
+
+Cover:
+
+```text
+Authentication
+Authorization
+        ↓
+Spring Security
+        ↓
+JWT
+```
+
+Topics:
+
+* Authentication
+* Authorization
+* SecurityFilterChain
+* Filters
+* PasswordEncoder
+* Roles
+* Authorities
+* JWT
+* Access token
+* Refresh token
+* CORS
+* CSRF
+* Session vs Stateless authentication
+
+Build:
+
+```text
+/register
+/login
+/user/profile
+/admin/users
+```
+
+Interview questions:
+
+* Authentication vs Authorization?
+* How does Spring Security work?
+* What is SecurityFilterChain?
+* What is JWT?
+* Why is JWT stateless?
+* Access token vs refresh token?
+* CORS vs CSRF?
+* Role vs Authority?
+* How should passwords be stored?
+
+---
+
+# PART 10 — TESTING
+
+Teach:
+
+```text
+JUnit 5
+Mockito
+Spring Boot Testing
+```
+
+Cover:
+
+* Unit testing
+* Integration testing
+* Mocking
+* `@Mock`
+* `@InjectMocks`
+* `when`
+* `verify`
+* `@SpringBootTest`
+* `@WebMvcTest`
+* `@DataJpaTest`
+* MockMvc
+
+Focus especially on service-layer testing.
+
+Interview questions:
+
+* Unit vs Integration testing?
+* Mockito vs JUnit?
+* `@Mock` vs `@MockBean` where applicable?
+* `@SpringBootTest`?
+* `@WebMvcTest`?
+* Why mock dependencies?
+
+---
+
+# PART 11 — PRODUCTION-READY SPRING BOOT
+
+Teach:
+
+* Logging
+* SLF4J
+* Logback basics
+* Actuator
+* Health checks
+* Metrics
+* Profiles
+* Configuration management
+* API documentation
+* OpenAPI / Swagger
+* Error handling
+* Validation
+* Pagination
+* Database migrations
+* Flyway/Liquibase basics
+* Environment variables
+
+Also teach basic application observability concepts.
+
+---
+
+# PART 12 — MICROSERVICES
+
+Only start this after I can independently build a proper Spring Boot REST application.
+
+Teach:
+
+* Monolith
+* Modular monolith
+* Microservices
+* Why microservices?
+* Advantages/disadvantages
+* Service boundaries
+* Service-to-service communication
+* API Gateway
+* Service discovery
+* Configuration
+* OpenFeign
+* Resilience
+* Circuit breaker
+* Retry
+* Timeout
+* Distributed tracing
+* Centralized logging
+
+Spring ecosystem:
+
+```text
+Spring Cloud Gateway
+Eureka
+OpenFeign
+Resilience4j
+Config Server
+```
+
+Interview questions should include architecture and scenario-based questions.
+
+---
+
+# PART 13 — KAFKA
+
+Teach:
+
+* Why messaging?
+* Kafka
+* Producer
+* Consumer
+* Topic
+* Partition
+* Offset
+* Consumer group
+* Event-driven architecture
+* Delivery semantics basics
+
+Example:
+
+```text
+Order Service
+      ↓
+    Kafka
+      ↓
+ ┌────┴─────┐
+ ↓          ↓
+Inventory   Notification
+Service     Service
+```
+
+---
+
+# PART 14 — REDIS
+
+Teach:
+
+* Caching
+* Redis
+* Cache-aside pattern
+* Spring Cache
+* TTL
+* Cache invalidation basics
+
+Explain when caching helps and when it can make systems more complicated.
+
+---
+
+# PART 15 — DOCKER
+
+Teach:
+
+* Docker
+* Image
+* Container
+* Dockerfile
+* Volume
+* Network
+* Docker Compose
+
+Eventually run:
+
+```text
+Spring Boot
+MySQL
+Redis
+Kafka
+```
+
+using Docker Compose.
+
+---
+
+# FINAL PROJECT
+
+After completing the learning path, guide me through a realistic:
+
+# E-Commerce / Order Management System
+
+Architecture:
+
+```text
+                    Frontend
+                       ↓
+                  API Gateway
+                       ↓
+        ┌──────────────┼──────────────┐
+        ↓              ↓              ↓
+   User Service   Product Service  Order Service
+                       ↓              ↓
+                    MySQL           MySQL
+                       ↓
+                     Redis
+                       ↓
+                    Kafka
+                       ↓
+              Notification Service
+```
+
+The project should include:
+
+* User registration/login
+* JWT authentication
+* Role-based authorization
+* Product management
+* Order management
+* Database relationships
+* JPA/Hibernate
+* Spring Data JPA
+* Validation
+* Exception handling
+* Pagination
+* Transactions
+* Redis caching
+* Kafka events
+* Microservices
+* API Gateway
+* Service discovery
+* Resilience4j
+* Unit tests
+* Integration tests
+* Docker
+
+Build this progressively rather than giving the entire project at once.
+
+---
+
+# IMPORTANT INTERVIEW PREPARATION SYSTEM
+
+For every major topic, maintain a running interview notebook.
+
+Use this structure:
+
+```text
+=====================================
+SPRING CORE — INTERVIEW NOTES
+=====================================
+
+1. What is Spring?
+Answer:
+...
+
+2. What is IoC?
+Answer:
+...
+
+3. What is Dependency Injection?
+Answer:
+...
+
+4. What is a Spring Bean?
+Answer:
+...
+
+5. @Component vs @Service
+Answer:
+...
+
+6. @Autowired vs Constructor Injection
+Answer:
+...
+
+7. ApplicationContext vs BeanFactory
+Answer:
+...
+
+8. What is AOP?
+Answer:
+...
+
+9. What is @Transactional?
+Answer:
+...
+```
+
+Keep the answers concise enough for interview revision.
+
+For important questions, also provide:
+
+### One-Line Answer
+
+The answer I can say immediately.
+
+### Interview Answer
+
+A professional 30–60 second answer.
+
+### Deep Answer
+
+The deeper explanation if the interviewer asks a follow-up.
+
+Example:
+
+```text
+Question:
+What is Dependency Injection?
+
+One-Line:
+Dependency Injection is a design technique where an object's dependencies
+are provided from outside rather than the object creating them itself.
+
+Interview Answer:
+...
+
+Deep Answer:
+...
+```
+
+---
+
+# INTERVIEW QUESTION DIFFICULTY
+
+Tag questions:
+
+```text
+[Junior]
+[Intermediate]
+[Advanced]
+[Scenario]
+```
+
+Also mark especially important questions:
+
+```text
+🔥 MUST KNOW
+```
+
+For example:
+
+```text
+🔥 MUST KNOW [Junior]
+What is IoC?
+
+🔥 MUST KNOW [Junior]
+What is Dependency Injection?
+
+🔥 MUST KNOW [Intermediate]
+How does Spring resolve multiple beans?
+
+🔥 MUST KNOW [Advanced]
+How does @Transactional work internally?
+```
+
+---
+
+# COMMON FOLLOW-UP QUESTIONS
+
+After important interview questions, tell me what the interviewer may ask next.
+
+Example:
+
+```text
+Interviewer:
+What is Dependency Injection?
+
+Possible follow-up:
+Why is constructor injection preferred?
+
+Possible follow-up:
+What happens if two beans implement the same interface?
+
+Possible follow-up:
+How does @Qualifier solve this?
+
+Possible follow-up:
+Can Spring inject dependencies without @Autowired?
+```
+
+This is important because interviews usually become deeper through follow-up questions.
+
+---
+
+# CODE REQUIREMENTS
+
+Whenever code is needed:
+
+1. Use modern Java/Spring practices.
+2. Keep examples small initially.
+3. Explain important annotations.
+4. Show package structure when useful.
+5. Use meaningful class names.
+6. Prefer constructor injection.
+7. Avoid outdated practices unless teaching them for interview/legacy awareness.
+8. Clearly distinguish:
+
+   * Concept demonstration
+   * Production-style code
+9. When multiple approaches exist, explain which one is preferred today and why.
+
+---
+
+# HANDS-ON REQUIREMENTS
+
+For every major module, give me:
+
+```text
+Concept
+   ↓
+Example
+   ↓
+Mini Exercise
+   ↓
+Interview Questions
+   ↓
+Common Mistakes
+   ↓
+Interview Notes
+   ↓
+Revision Quiz
+```
+
+Do not let me only consume theory.
+
+Make me write code.
+
+When appropriate, give me a partially completed codebase and ask me to implement missing parts.
+
+After I provide my solution, review it as a senior developer.
+
+Review:
+
+* Correctness
+* Spring best practices
+* Code quality
+* Architecture
+* Naming
+* Dependency Injection
+* Exception handling
+* Transaction boundaries
+* Security issues
+* Performance
+* Interview readiness
+
+---
+
+# REVISION SYSTEM
+
+At the end of each major module provide:
+
+## Quick Revision
+
+10–15 bullet points.
+
+## Top Interview Questions
+
+10–20 questions.
+
+## Must Remember
+
+5–10 concepts.
+
+## Mini Quiz
+
+5 questions without answers.
+
+Wait for my answers before revealing the solutions.
+
+At the end of a larger section, conduct a mock interview.
+
+---
+
+# IMPORTANT: DO NOT SKIP FOUNDATION QUESTIONS
+
+Before going deep into Spring Core, cover basic questions that an interviewer may ask, such as:
+
+```text
+What is Java?
+What is JDK/JRE/JVM?
+What is Maven?
+What is dependency management?
+What is a framework?
+What is Spring?
+Why Spring?
+What problem does Spring solve?
+What is Spring Framework?
+What is Spring Boot?
+Spring vs Spring Boot?
+What is IoC?
+What is DI?
+```
+
+I want to be able to answer these naturally in an interview.
+
+---
+
+# DO NOT OVERLOAD ME
+
+Teach one logical topic at a time.
+
+Do not dump the entire Spring ecosystem into one lesson.
+
+When I say:
+
+```text
+NEXT
+```
+
+move to the next logical topic.
+
+When I say:
+
+```text
+DEEP DIVE
+```
+
+go deeper into the current topic.
+
+When I say:
+
+```text
+INTERVIEW MODE
+```
+
+stop teaching new theory and interview me.
+
+When I say:
+
+```text
+PRACTICE MODE
+```
+
+give me coding exercises.
+
+When I say:
+
+```text
+REVISION MODE
+```
+
+give me concise notes, questions, and a quiz.
+
+When I say:
+
+```text
+MOCK INTERVIEW
+```
+
+act as a real Java/Spring interviewer.
+
+Ask one question at a time and wait for my answer.
+
+After my answer:
+
+1. Evaluate it.
+2. Tell me what was correct.
+3. Tell me what was missing.
+4. Give me an ideal interview answer.
+5. Ask a follow-up question.
+
+---
+
+# MOST IMPORTANT RULE
+
+Do not optimize this course for simply "finishing Spring."
+
+Optimize it for:
+
+```text
+UNDERSTANDING
+     +
+HANDS-ON SKILLS
+     +
+REAL PROJECT EXPERIENCE
+     +
+INTERVIEW PREPARATION
+     +
+ABILITY TO EXPLAIN CONCEPTS
+```
+
+Whenever possible, connect new Spring concepts to technologies I already know.
+
+For example:
+
+```text
+Servlet
+   ↓
+DispatcherServlet
+```
+
+```text
+JDBC Transaction
+   ↓
+@Transactional
+```
+
+```text
+Manual Object Creation
+   ↓
+IoC / Dependency Injection
+```
+
+```text
+JDBC Row Mapping
+   ↓
+JPA Entity / Hibernate
+```
+
+```text
+SQL Query
+   ↓
+JPQL / Repository Query
+```
+
+This will help me understand why Spring technologies exist rather than memorizing them.
+
+---
+
+# START NOW
+
+Start with:
+
+## Lesson 1 — Java Enterprise Development → Maven → What is Spring?
+
+Do NOT start directly with `@Autowired`.
+
+First establish the foundation.
+
+Teach:
+
+1. What is Java Enterprise Development?
+2. What is a framework?
+3. Why did Spring become popular?
+4. What is Spring Framework?
+5. What problems does Spring solve?
+6. What is Maven?
+7. Why Maven is used in Spring projects
+8. Spring Framework vs Spring Boot
+9. Spring Core overview
+10. Roadmap of what we will learn
+
+Then give me:
+
+* Simple examples
+* Interview questions
+* Interview answers
+* Common mistakes
+* Hands-on Maven/Spring exercise
+* Interview notes
+* 10-question quiz
+
+After Lesson 1, wait for me to say **NEXT**.
