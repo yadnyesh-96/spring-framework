@@ -29,6 +29,13 @@ public class InventoryApplication {
 
 		ProductRepository repository = context.getBean(ProductRepository.class);
 
+		List<Product> products = repository.findProductByPage(3, 3);
+
+		for (Product p : products) {
+			System.out.println(
+					p.getProductId() + "\t" + p.getProductName() + "\t" + p.getCategory() + "\t" + p.getPrice());
+		}
+
 		/*
 		 * Product p = new Product("Laptop Stand", "ACCESSORIES", new
 		 * BigDecimal("1800.00"), "ACTIVE");
@@ -149,17 +156,17 @@ public class InventoryApplication {
 
 		// # Place Order Now
 
-		OrderService orderService = context.getBean(OrderService.class);
-
-		Order order = new Order("Rahul", new BigDecimal("2400"), "CREATED");
-
-		OrderItem orderItem = new OrderItem(0, // orderId - generated later
-				2, // productId = Wireless Mouse
-				200, // quantity
-				new BigDecimal("1200") // unitPrice
-		);
-
-		orderService.placeOrder(order, orderItem);
+		/*
+		 * OrderService orderService = context.getBean(OrderService.class);
+		 * 
+		 * Order order = new Order("Rahul", new BigDecimal("2400"), "CREATED");
+		 * 
+		 * OrderItem orderItem = new OrderItem(0, // orderId - generated later 2, //
+		 * productId = Wireless Mouse 200, // quantity new BigDecimal("1200") //
+		 * unitPrice );
+		 * 
+		 * orderService.placeOrder(order, orderItem);
+		 */
 
 	}
 

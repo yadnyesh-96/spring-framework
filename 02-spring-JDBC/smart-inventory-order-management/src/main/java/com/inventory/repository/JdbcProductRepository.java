@@ -146,4 +146,12 @@ public class JdbcProductRepository implements ProductRepository {
 				batch);
 	}
 
+	@Override
+	public List<Product> findProductByPage(int PageNumber, int PageSize) {
+		int offset = (PageNumber - 1) * PageSize;
+		return jdbcTemplate.query(
+				"SELECT product_id, product_name, category, price, status FROM products ORDER BY product_id LIMIT ? OFFSET ?",
+				new ProductRowMapper(), PageSize, offset);
+	}
+
 }

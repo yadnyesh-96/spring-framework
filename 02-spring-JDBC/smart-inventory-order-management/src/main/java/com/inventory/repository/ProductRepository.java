@@ -35,4 +35,7 @@ public interface ProductRepository {
 
 	// Batch Update
 	int[] createProductsInBatch(List<Product> products);
+
+	// Pagination
+	List<Product> findProductByPage(int PageNumber, int PageSize);
 }
