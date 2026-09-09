@@ -30,17 +30,17 @@ public class ProductService {
 	}
 
 	// transactional
-
-	@Transactional
-	public void testTransaction() {
-
-		Product product1 = new Product(1, "Rollback Laptop", "ELECTRONICS", new BigDecimal("81000"), "ACTIVE");
-
-		Product product2 = new Product(2, "Rollback Mouse", "ACCESSORIES", new BigDecimal("1600"), "ACTIVE");
-
-		productRepository.updateProduct(product1);
-
-		// Intentionally cause an exception
-		throw new RuntimeException("Something went wrong!");
-	}
+//
+//	@Transactional
+//	public void testTransaction() {
+//
+//		Product product1 = new Product(1, "Rollback Laptop", "ELECTRONICS", new BigDecimal("81000"), "ACTIVE");
+//
+//		Product product2 = new Product(2, "Rollback Mouse", "ACCESSORIES", new BigDecimal("1600"), "ACTIVE");
+//
+//		productRepository.updateProduct(product1);
+//
+//		// Intentionally cause an exception
+//		throw new RuntimeException("Something went wrong!");
+//	}
 }

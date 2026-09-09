@@ -12,8 +12,13 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.inventory.config.AppConfig;
 import com.inventory.config.DatabaseConfig;
+import com.inventory.model.Order;
+import com.inventory.model.OrderItem;
 import com.inventory.model.Product;
+import com.inventory.repository.OrderItemRepository;
+import com.inventory.repository.OrderRepository;
 import com.inventory.repository.ProductRepository;
+import com.inventory.service.OrderService;
 import com.inventory.service.ProductService;
 
 public class InventoryApplication {
@@ -114,16 +119,47 @@ public class InventoryApplication {
 		 * System.out.println("Product not found"); }
 		 */
 
-		ProductService productService = context.getBean(ProductService.class);
+		/*
+		 * ProductService productService = context.getBean(ProductService.class);
+		 * 
+		 * Product l = productService.findProductById(999); if (l != null) {
+		 * System.out.println(l.getProductId() + "\t" + l.getProductName() + "\t" +
+		 * l.getCategory() + "\t" + l.getPrice() + "\t" + l.getStatus()); } else {
+		 * System.out.println("No product returned."); }
+		 * productService.testTransaction();
+		 */
+		// ## Order
 
-		Product l = productService.findProductById(999);
-		if (l != null) {
-			System.out.println(l.getProductId() + "\t" + l.getProductName() + "\t" + l.getCategory() + "\t"
-					+ l.getPrice() + "\t" + l.getStatus());
-		} else {
-			System.out.println("No product returned.");
-		}
-		productService.testTransaction();
+		/*
+		 * OrderRepository orederRepository = context.getBean(OrderRepository.class);
+		 * 
+		 * Order order = new Order("Yadnyesh", new BigDecimal("70000"), "CREATED"); int
+		 * orderId = orederRepository.createOrder(order);
+		 * 
+		 * System.out.println("Generated Order ID: " + orderId);
+		 * 
+		 * // ## Create the Order for temporary to checks OrderItemRepository
+		 * orderItemRepository = context.getBean(OrderItemRepository.class);
+		 * 
+		 * OrderItem item = new OrderItem(1, 2, 2, new BigDecimal("1200"));
+		 * 
+		 * System.out.println(orderItemRepository.createOrderItem(item) ? "Orde Placed"
+		 * : "Order Placed Fails");
+		 */
+
+		// # Place Order Now
+
+		OrderService orderService = context.getBean(OrderService.class);
+
+		Order order = new Order("Rahul", new BigDecimal("2400"), "CREATED");
+
+		OrderItem orderItem = new OrderItem(0, // orderId - generated later
+				2, // productId = Wireless Mouse
+				200, // quantity
+				new BigDecimal("1200") // unitPrice
+		);
+
+		orderService.placeOrder(order, orderItem);
 
 	}
 
