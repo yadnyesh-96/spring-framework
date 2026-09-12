@@ -8,6 +8,11 @@ public class HelloController {
 
 	@GetMapping("/hello")
 	public String hello() {
-		return "Hello Spring MVC!";
+		return "Welcome to Employee Management HR Portal ...!";
+	}
+
+	@GetMapping("/welcome")
+	public String welcome() {
+		return "Welcome to Employee HR Portal!";
 	}
 }
