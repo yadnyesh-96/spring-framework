@@ -1,0 +1,74 @@
+
+HTTP Maping Annotations
+--------------------
+Now we need to know how controller receives data from the client 
+THere are three Important Way's:
+
+	Annotation				Get Data From 				Example
+-------------------------------------------------------------------
+1. @PathVariable			URL							/employee/101
+2. @RequestParam			Query Parameter				/employee?department=IT
+3. @RequestBody				Request Body				JSON Data
+
+
+--------------------------------------
+#1. @PathVariable
+ex. 
+/employee/101 
+i)
+@GetMapping("/employee/{id}")
+public string getEmployee(@PathVariable int id){}
+
+ii)
+@GetMapping("/employee/{id}")
+public string getEmployee(@PathVariable("id") int id){}
+
+
+-----------------------------------------
+#2.	@RequestParam
+ex.
+/employee?department=IT
+i)
+@GetMaooing("/employee")
+public String getDepartment(@RequestParam("department") String department)
+
+ii) we can also do that if we have multiples suppose url: /employee?department=IT&salary=15400&name=anuj
+@GetMapping("/employee")
+public String getDetails
+			(@RequestParam("department") String dept,
+			 @RequestParam("salary") int salary,
+			 @RequestParam("name") String name)
+			 {};
+			 
+--------------------------------------------
+## We Also Combine Both Annotation @PathVariable and @RequestParam 
+URL : /employee/101?department=IT&salary=56320&name=anuj
+i) 
+@GetMapping("/employee/{id}")
+public String getDetails(
+		@PathVariable("id") int id,
+		@RequestParam("department") String department,
+		@RequestParam("salary") int salary,
+		@RequestParam("name") String name
+	){}			
+
+------------------------------------------
+#3. @RequestBody
+- Suppose we are creating Employee and The client has snet data in JSON format 
+	that data is too structured to convient to put into the URL
+	then client send it in Request Body
+	Example: POST /api/employee
+	with body :
+	{
+		"name": "Anuj",
+		"department": "IT",
+		"salary": 52000
+	}
+	Spring MVC can convert that JSON into a java object using 
+	"@RequestBody"
+	flow : JSON -> HTTP Request Body -> DispatcherServlet -> Spring MVC -> @RequestBody -> Java Object
+	
+---------------------------------------.
+
+# DTO - Data Transfer Object 
+- It's Primary Purpose is to carry data between different layers or boundaries of an Application
