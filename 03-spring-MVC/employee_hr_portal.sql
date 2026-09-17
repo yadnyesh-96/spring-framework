@@ -13,3 +13,7 @@ CREATE TABLE employees (
 DESCRIBE employees;
 
 SELECT *FROM employees;
+
+INSERT INTO employees (name, department, salary, status)
+VALUES
+('Rahul','Python',41200,'ACTIVE');
