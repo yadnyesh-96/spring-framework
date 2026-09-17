@@ -1,5 +1,7 @@
 package com.employee.controller;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -40,34 +42,44 @@ public class EmployeeController {
 	public ResponseEntity<EmployeeResponse> getEmployee(@PathVariable("id") int id) {
 
 		EmployeeResponse em = employeeService.getEmployeeById(id);
-
 		return ResponseEntity.ok(em);
 	}
 
 	@GetMapping
-	public ResponseEntity<String> getAllEmployees() {
+	public ResponseEntity<List<EmployeeResponse>> getAllEmployees() {
 
-		return ResponseEntity.ok("Get all employees");
+		List<EmployeeResponse> employees = employeeService.getAllEmployees();
+		return ResponseEntity.ok(employees);
 	}
 
-	@PutMapping("/{id}")
-	public ResponseEntity<String> updateEmployee(@PathVariable("id") int id,
+	@PatchMapping("/{id}")
+	public ResponseEntity<String> patchEmployee(@PathVariable("id") int id,
 			@RequestBody @Valid EmployeeRequest employeeRequest) {
 
 		return ResponseEntity.ok("Employee " + id + " updated successfully");
 	}
 
-	// PARTIAL UPDATE
-	@PatchMapping("/{id}")
-	public ResponseEntity<String> patchEmployee(@PathVariable("id") int id) {
+	// UPDATE
+	@PutMapping("/{id}")
+	public ResponseEntity<String> updateEmployee(@PathVariable("id") int id,
+			@RequestBody @Valid EmployeeRequest employeeRequest) {
 
-		return ResponseEntity.ok("Employee " + id + " partially updated");
+		boolean update = employeeService.UpdateEmployee(id, employeeRequest);
+
+		if (!update) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Employee Id: " + id + " Not found");
+		}
+		return ResponseEntity.ok("Employee " + id + " updated");
 	}
 
 	// DELETE
 	@DeleteMapping("/{id}")
 	public ResponseEntity<String> deleteEmployee(@PathVariable("id") int id) {
 
+		if (!employeeService.deleteEmployee(id)) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Employee with Id: " + id + " Not Found");
+		}
+		
 		return ResponseEntity.ok("Employee " + id + " deleted successfully");
 	}
 }

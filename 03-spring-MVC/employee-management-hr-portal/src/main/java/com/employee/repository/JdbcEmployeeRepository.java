@@ -8,6 +8,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
+
+import com.employee.dto.EmployeeResponse;
 import com.employee.model.Employee;
 
 @Repository
@@ -50,22 +52,53 @@ public class JdbcEmployeeRepository implements EmployeeRepository {
 
 	@Override
 	public Employee findById(int id) {
-		return null;
+
+		String sql = """
+				SELECT id, name, department, salary, status
+				FROM employees
+				WHERE id = ?
+				""";
+
+		return jdbcTemplate.queryForObject(sql, (rs, rowNum) -> {
+			Employee employee = new Employee();
+
+			employee.setId(rs.getInt("id"));
+			employee.setName(rs.getString("name"));
+			employee.setDepartment(rs.getString("department"));
+			employee.setSalary(rs.getInt("salary"));
+			employee.setStatus(rs.getString("status"));
+
+			return employee;
+		}, id);
 	}
 
 	@Override
 	public List<Employee> findAll() {
-		return null;
+		return jdbcTemplate.query("SELECT id, name, department, salary, status FROM employees", (rs, rowNum) -> {
+			Employee e = new Employee();
+			e.setId(rs.getInt("Id"));
+			e.setName(rs.getString("name"));
+			e.setDepartment(rs.getString("department"));
+			e.setSalary(rs.getInt("salary"));
+			e.setStatus(rs.getString("status"));
+
+			return e;
+		});
 	}
 
 	@Override
 	public boolean update(Employee employee) {
-		return false;
+
+		int val = jdbcTemplate.update("UPDATE employees SET name=?,department=?,salary=?,status=? WHERE id=?",
+				employee.getName(), employee.getDepartment(), employee.getSalary(), employee.getStatus(),
+				employee.getId());
+		return val > 0;
 	}
 
 	@Override
 	public boolean delete(int id) {
-		return false;
+		int val = jdbcTemplate.update("DELETE FROM employees WHERE id=?", id);
+		return val > 0;
 	}
 
 }
